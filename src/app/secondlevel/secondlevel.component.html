@@ -1,0 +1,53 @@
+<hr>
+
+<p>secondlevel works!</p>
+
+
+<!--ngStyle-->
+
+<!-- <div style="background-color:red">FirstDiv</div> -->
+ <!-- don't give directly red give logic in ts and rxceute through html -->
+
+ <!-- element level style, inline style, external style -->
+ <!-- <div [ngStyle] ="
+ {'background-color': divColor,
+ 'font-Size' : divfontSize
+}">NgStyle</div> -->
+
+<div [ngStyle] ="
+ {'background-color': divColor,
+ 'font-Size' : divfontSize
+}" (mouseover)="changeColor()"
+    (mouseout)="resetColor()"
+    (click)="clickOutColor()">{{divtext}}
+</div>
+
+
+<!-- ngClass -->
+ <div [ngClass]="'para'">
+ ngClass is nothing but change the class based on condition
+</div>
+
+<!-- condition based class -->
+
+<button (click)="changePara()">
+ClickHere
+</button>
+<div [ngClass] = "isStatus == true ? 'para' : 'para1'">
+    Other class
+</div>
+
+{{isStatus}}
+
+
+
+
+
+
+
+
+
+
+
+
+ 

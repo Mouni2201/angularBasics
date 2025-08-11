@@ -1,0 +1,126 @@
+<p>testlevel works!</p>
+Hello world
+
+ <app-test-comp></app-test-comp> 
+
+ <!-- string interpolation {{_________}}-->
+
+ <h3>AngularBasics</h3>
+
+<h3>Welcome to {{title}}</h3>
+
+{{projectName}} and {{title}}
+
+
+
+<br>
+{{concept1}}
+
+<br>
+{{concept2}}
+
+<!-- <input value = "Mounica">
+<br>
+<input [value] = "customerRole">
+<br>
+<input type = "text" value="abcd">
+<br>
+<input [type] = "InputType">
+<br>
+<input type = "text" disabled = "true">
+<br>
+<input [type] = "InputType" disabled = "true">
+<br>
+<input [type]="InputType" [disabled]="isDisabled" > -->
+
+<input value = "Mounica">
+<input [value] = "customerRole">
+
+<input type = "text" value="abcd">
+<input [type] = "InputType">
+
+<input type = "text" disabled = "true">
+<input [type] = "InputType" disabled = "true">
+<input [type]="InputType" [disabled]="isDisabled" >
+
+
+
+<!-- {{concept3}} -->
+
+<!-- event | task | action ---------() -->
+
+  <button (click)="btnClick()" (mouseover)="btnMouseOver()">clickMe</button>
+  <!-- <button (mouseover)="btnMouseOver()">clickMe</button> -->
+
+
+  <!-- Event Binding -->
+  <br>
+
+  <!-- $event -->
+  <!-- <input type = "text" 
+  (keyup) = "captureData($event)"
+  placeholder = "Event Binding"> -->
+
+  <input type = "text" 
+  (keyup) = "captureData($event, 'helloworld')"
+  placeholder = "EventBinding">
+<br>
+
+  <!-- Q: want to apply property databinding and event databinding together to the single html element -->
+
+  <input type = "text"
+  (keyup) = "captureData($event, 'helloworld')"
+  [placeholder] = "testvalue">
+
+<hr>
+<p>NgModel</p>
+<!-- [ngModel] = ng model is a feature in angular. This ng model bind with property it accepts any kind of value from ts to html -->
+ <input type = "text"[value] = "sName">
+
+<select>
+    <option [selected] = "selectedValue == 1" value="1">Kushal</option>
+    <option [selected] = "selectedValue == 2" value="2">Medhansh</option>
+    <option [selected] = "selectedValue == 3" value="3">Nandi</option>
+
+</select>
+<br>
+<input type = "text"[value] = "sName">
+<select (change) = "drpChange()">
+    <option [selected] = "selectedValue == 1" value="1">Kushal</option>
+    <option [selected] = "selectedValue == 2" value="2">Medhansh</option>
+    <option [selected] = "selectedValue == 3" value="3">Nandi</option>
+
+</select>
+
+<!-- ngModel and ngModel change -->
+ <input type = "text"
+ [ngModel] = "sName"
+(ngModelChange) = "modelChange($event)"/>
+
+<input type = "checkbox"
+[ngModel]="isChecked"
+(ngModelChange) = "modelChange($event)"/>
+
+<select
+(change) = "drpChange()"
+[ngModel] = "selectedValue"
+(ngModelChange)="modelChange($event)">
+<option value="1">Ramu</option>
+<option value="2">Raju</option>
+<option value="3">Ram</option>
+</select>
+
+<!-- two databinding [()] -->
+ <hr>
+<!-- [(ngModel)] = [ngModel]+(ngModelChange) -->
+ <input type = "text" [(ngModel)] = "xyz">
+<!-- two way databinding is nothing but whenevenr you want to update the action will trigger -->
+ <br>
+ The Name: <span>{{xyz}}</span>
+
+ <textarea [value] = "xyz"></textarea>
+
+<!-- we can use span and textarea -->
+
+
+

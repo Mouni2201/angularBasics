@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { TestCompComponent } from './test-comp/test-comp.component';
 
 import{FormsModule} from '@angular/forms';
+import { TestlevelComponent } from './testlevel/testlevel.component';
+import { SecondlevelComponent } from './secondlevel/secondlevel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestCompComponent
+    TestCompComponent,
+    TestlevelComponent,
+    SecondlevelComponent
   ],
   imports: [
     BrowserModule,
