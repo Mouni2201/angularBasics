@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 
 import { TestCompComponent } from './test-comp/test-comp.component';
 
+import{FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     TestCompComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

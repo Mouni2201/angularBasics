@@ -25,4 +25,45 @@ export class AppComponent {
    btnMouseOver(){
       console.log("You are hovering over the button");
    }
+
+
+  //  $event
+  //  captureData(eventDetails:any){
+  //   console.log(eventDetails);
+  //   console.log("Data capatured:");
+  //   // console.log("eventDetails.target.value");
+  //  }
+
+  
+  captureData(eventDetails:KeyboardEvent, status:string){
+    console.log(eventDetails);
+    let element = eventDetails.target as HTMLInputElement
+    let data = element.value;
+    console.log(data);
+   }
+
+// Q: want to apply property databinding and event databinding together to the single html element
+
+
+testvalue = "enter your name";
+
+sName = "Kushal";
+selectedValue = 2;
+
+isChecked = true;
+drpChange(){
+  console.log("you changed the value");
 }
+
+
+modelChange($event:any){
+  console.log($event)
+}
+
+
+//two way data binding
+xyz = "Angular basics";
+}
+
+
+
