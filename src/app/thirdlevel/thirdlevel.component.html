@@ -1,0 +1,215 @@
+<p>thirdlevel works!</p>
+
+<!-- ngIf -->
+ <!-- ngIf is a structural directive that means infulence the dom thats called the structure -->
+<!-- <p>{{customerEligibility}}</p>
+
+<input type = "checkbox" [(ngModel)]="customerEligibility"/>
+
+<p *ngIf = "customerEligibility">
+    SecretKey = Mounica&@6830
+    </p>   -->
+
+
+<!-- Local Ref Element -->
+ <!-- by default it won't render based on the condition its render /executes/trigger -->
+
+ <p #question>Hey!!! How are you dear?</p>
+ <!-- let me call the method here -->
+  <button (click) = "evtclick(question)"> Click Me</button> 
+<!-- if we click the button the output shows in console -->
+
+<span>{{answer}}</span>
+<!-- answer will print in webpage only -->
+
+
+
+<hr>
+<!-- ngTemplate Element -->
+ <!-- ngTemplate element by default i don't want to do render then that time we can use ng tempalate -->
+<ng-template>
+    <p>
+        SecretKey:a2@4his7**  
+        <!-- it won't display  -->
+    </p>
+</ng-template>   
+<!-- want to display something use (use case of ng- template) -->
+
+
+<p>{{customerEligibility}}</p>
+<input type = "checkbox" [(ngModel)]="customerEligibility"/>
+
+<p *ngIf = "customerEligibility; else feedback">
+    SecretKey = Mounica&@6830
+    </p>  
+    <ng-template #feedback>
+         <p>
+        Hey!!! YOu do't have permission to see the Secreat key.
+        Please contact Bank Representive.
+    </p> 
+    </ng-template>
+<!-- above example if it is true the secret key will show and then if it is false
+the feedback will show -->
+
+
+<hr>
+
+<!-- ngFor Directive : to handle list of data -->
+ <ul>
+    <li>Kushal likes Sweet and lives in london</li>
+    <li>Medhansh plays very well and lives in chennai</li>
+    <li>Sahasra plays so many games and lives in banglore</li>
+ </ul>
+ <!-- it will print one by one with dot -->
+
+
+<ul>
+    <li *ngFor = "let item of data">
+        {{item}}
+    </li>
+
+</ul>
+<!-- this one also print same like first exmaple -->
+
+
+
+<ul>
+    <li *ngFor="let item of data">
+        <input type = "text" [value]="item">
+    </li>
+</ul>
+<!-- same output but the box will print for every sentence -->
+
+<select>
+    <option *ngFor = "let item of data">{{item}}</option>
+</select>
+<!-- drop down will create and choose which one we want -->
+
+
+<!-- index Method -->
+ <ul>
+    <li *ngFor = "let item of data; let ind = index">
+        {{ind}}: <input type="text" [value]="item" />
+
+    </li>
+ </ul>
+ <!-- index number will peint before every sentence ans starts with 0 -->
+
+
+<select>
+    <option *ngFor = "let item of data1; let ind = index"
+        [value] = "ind">
+         {{item}}
+    </option>
+</select>
+<!-- the values shows in element console -->
+
+<select [(ngModel)] = FoodDefaultValue>
+   <option *ngFor = "let item of data2; let ind = index"
+        [value] = "ind">
+         {{item}}
+    </option>
+</select>
+<!-- default value will take  in drop down -->
+
+
+<br>
+<input type = "text" [(ngModel)] = "setValue">
+<button (click) = "evtDecideFood()">ClickMe</button>
+<select [(ngModel)] = FoodDefaultValue>
+    <option *ngFor = "let item of data2; let ind = index"
+         [value] = "ind">
+        {{item}}
+    </option>
+</select>
+<!-- here if you give index in text coloumn and click on clickme button and besides it print the index value -->
+
+
+<br>
+<input [(ngModel)] = "FoodDefaultValue" type = "text">
+{{FoodDefaultValue}}
+<select [(ngModel)] = FoodDefaultValue>
+    <option *ngFor = "let item of data2; let ind = index"
+         [value] = "ind">
+        {{item}}
+    </option>
+</select>
+<!-- here whenever you select the value and the output index value 
+print in text box -->
+
+
+<ul>
+    <li *ngFor = "let item of data3">
+        {{item.itemNo}} - {{item.itemName}}
+    </li>
+</ul>
+
+<select [(ngModel)] = "data3FoodDefaultValue">
+    <option *ngFor = "let item of data3"
+    [value] = "item.itemNo">
+    {{item.itemName}}
+
+    </option>
+</select>
+
+
+<!-- table -->
+ <table>
+    <thead>
+        <tr>
+            <th *ngFor = "let headerName of columnNames">
+            {{headerName}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let row of data3">
+            <td>{{row.itemNo}}</td>
+            <td {{row.itemName}}></td>
+        </tr>
+        <tr>
+            <td>CA101</td>
+            <td>Dosa</td>
+        </tr>
+        <tr>
+            <td>CA102</td>
+            <td>Idly</td>
+        </tr>
+        <tr>
+            <td>CA103</td>
+            <td>Rice</td>
+        </tr>
+       
+    </tbody>
+ </table>
+
+<hr>
+<!-- ngSwitchCase -->
+ <!-- based on the case we execute the content -->
+  <!-- ngSwitch and ngSwitchCase -->
+
+  <!-- <div>
+    <p>Kushal likes Sweet and lives in london</p>
+    <p>Medhansh plays very well and lives in chennai</p>
+    <p>Sahasra plays so many games and lives in banglore</p>
+  </div> -->
+<!-- normal default html -->
+
+  <div [ngSwitch] = "customerId">
+<p *ngSwitchCase = "1">Kushal likes Sweet and lives in london</p>
+<p *ngSwitchCase = "2">Medhansh plays very well and lives in chennai</p>
+<p *ngSwitchCase = "3">Sahasra plays so many games and lives in banglore</p>
+<p *ngSwitchDefault = " "> unable to find any user</p>
+  </div>
+  <!-- it will print unable to find any user -->
+
+  <hr>
+<p>
+ Hello user !!! Please enter 1,2,3 Id Only .
+     becase we are having the only 3 users </p>
+<input type="text" [(ngModel)]= "customerId">
+<div [ngSwitch] = "customerId">
+<p *ngSwitchCase = "1">Kushal likes Sweet and lives in london</p>
+<p *ngSwitchCase = "2">Medhansh plays very well and lives in chennai</p>
+<p *ngSwitchCase = "3">Sahasra plays so many games and lives in banglore</p>
+<p *ngSwitchDefault = " "> unable to find any user</p>
+  </div>
