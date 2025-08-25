@@ -1,0 +1,19 @@
+<p>fourthlevel works!</p>
+
+<!-- viewChild -->
+ <!-- give the element of view referenceof html to typescript file with thw help of reference name -->
+<input type = "text"
+placeholder = "First Name"
+#firstName/>
+
+<p #someText>Hello World</p>
+<button (click) = "btnClick()">
+    ClickMe
+</button>
+
+
+<!-- Content Child -->
+ <!-- Gives the element of content refernce of html to typscript file with the help of refernce name -->
+  <ng-content select="[password]">
+
+  </ng-content>
